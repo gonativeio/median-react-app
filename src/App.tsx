@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Median from "median-js-bridge";
+import React, { useEffect } from "react";
+import "./App.css";
 
-function App() {
+const App: React.FC = () => {
+  useEffect(() => {
+    Median.onReady(() => {
+      window.alert("Median app ready!");
+    });
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className="App-title">Median React App</h1>
+      <p className="App-only">
+        App Only: To use this demo for testing open the current page within your
+        Median.co app.
+      </p>
+
+      <button
+        className="App-button"
+        onClick={() => {
+          window.alert(`isNativeApp: ${Median.isNativeApp()}`);
+        }}
+      >
+        Median.isNativeApp()
+      </button>
     </div>
   );
-}
+};
 
 export default App;
