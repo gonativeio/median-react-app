@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/median-react-demo/static/css/main.1434de16.css",
+    "main.js": "/median-react-demo/static/js/main.93b9a783.js",
+    "index.html": "/median-react-demo/index.html",
+    "main.1434de16.css.map": "/median-react-demo/static/css/main.1434de16.css.map",
+    "main.93b9a783.js.map": "/median-react-demo/static/js/main.93b9a783.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1434de16.css",
+    "static/js/main.93b9a783.js"
+  ]
+}
