@@ -1,0 +1,40 @@
+.button {
+  margin-bottom: 25px;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 60px);
+  justify-content: center;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.content {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  padding-bottom: 20px;
+}
+
+.note {
+  color: rgb(201, 21, 21);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 25px 0 50px;
+}
+
+.section {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 5px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0;
+}

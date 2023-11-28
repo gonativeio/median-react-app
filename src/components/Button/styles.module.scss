@@ -1,0 +1,23 @@
+.button {
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  box-shadow: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 550;
+  padding: 15px 20px;
+  width: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.container {
+  width: 100%;
+}

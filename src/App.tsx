@@ -1,32 +1,15 @@
-import Median from "median-js-bridge";
-import React, { useEffect } from "react";
-import "./App.css";
+import Home from 'containers/Home';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
-const App: React.FC = () => {
-  useEffect(() => {
-    Median.onReady(() => {
-      window.alert("Median app ready!");
-    });
-  }, []);
-
+function App() {
   return (
-    <div className="App">
-      <h1 className="App-title">Median React App</h1>
-      <p className="App-only">
-        App Only: To use this demo for testing open the current page within your
-        Median.co app.
-      </p>
-
-      <button
-        className="App-button"
-        onClick={() => {
-          window.alert(`isNativeApp: ${Median.isNativeApp()}`);
-        }}
-      >
-        Median.isNativeApp()
-      </button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/median-react-demo" element={<Home />} />
+        <Route path="*" element={<Navigate to="/median-react-demo" />} />
+      </Routes>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;
