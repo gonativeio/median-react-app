@@ -14,13 +14,11 @@ const Home: React.FC = () => {
     });
   }, []);
 
-  const handleIsNativeAppClick = useCallback(() => {
-    const info = {
-      isNativeApp: Median.isNativeApp(),
-      isAndroid: Median.isAndroid(),
-      isIos: Median.isIos(),
-    };
-    window.alert(JSON.stringify(info));
+  const handleDeviceInfoClick = useCallback(async () => {
+    const isNativeApp = Median.isNativeApp();
+    const isAndroid = await Median.isAndroid();
+    const isIos = await Median.isIos();
+    window.alert(JSON.stringify({ isNativeApp, isAndroid, isIos }));
   }, []);
 
   const handleAppResumedClick = useCallback(() => {
@@ -69,7 +67,7 @@ const Home: React.FC = () => {
 
       <div className={styles.content}>
         <h2 className={styles.section}>Built-in functions</h2>
-        <Button className={styles.button} onClick={handleIsNativeAppClick}>
+        <Button className={styles.button} onClick={handleDeviceInfoClick}>
           Check Device Info
         </Button>
 
