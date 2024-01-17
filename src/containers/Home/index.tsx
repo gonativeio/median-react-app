@@ -16,9 +16,8 @@ const Home: React.FC = () => {
 
   const handleDeviceInfoClick = useCallback(async () => {
     const isNativeApp = Median.isNativeApp();
-    const isAndroid = await Median.isAndroid();
-    const isIos = await Median.isIos();
-    window.alert(JSON.stringify({ isNativeApp, isAndroid, isIos }));
+    const platform = await Median.getPlatform();
+    window.alert(`isNativeApp: ${isNativeApp}, getPlatform: ${platform}`);
   }, []);
 
   const handleAppResumedClick = useCallback(() => {
