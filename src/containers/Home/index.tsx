@@ -9,8 +9,17 @@ const Home: React.FC = () => {
   const [shareToAppListenerId, setShareToAppListenerId] = useState('');
 
   useEffect(() => {
-    Median.onReady(() => {
-      window.alert('Median app ready!');
+    Median.onReady(async () => {
+      const { initialized } = await Median.branch.isInitialized()!;
+
+      if (initialized) {
+        const params = await Median.branch.getFirstParams();
+        console.log(params)
+      }else {
+        const branchId = Median.branchInitialized.addListener(({ data }) => {
+          console.log(data)
+        });
+      }
     });
   }, []);
 
@@ -55,6 +64,12 @@ const Home: React.FC = () => {
       setShareToAppListenerId(listenerId);
     }
   }, [shareToAppListenerId]);
+
+  // useEffect(() => {
+    
+
+  //   return () => Median.branchInitialized.removeListener(branchId);
+  // }, [])
 
   return (
     <div className={styles.container}>
