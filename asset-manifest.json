@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/median-react-demo/static/css/main.834775a1.css",
-    "main.js": "/median-react-demo/static/js/main.1f38474b.js",
+    "main.css": "/median-react-demo/static/css/main.cbc73d55.css",
+    "main.js": "/median-react-demo/static/js/main.f8e280a8.js",
     "index.html": "/median-react-demo/index.html",
-    "main.834775a1.css.map": "/median-react-demo/static/css/main.834775a1.css.map",
-    "main.1f38474b.js.map": "/median-react-demo/static/js/main.1f38474b.js.map"
+    "main.cbc73d55.css.map": "/median-react-demo/static/css/main.cbc73d55.css.map",
+    "main.f8e280a8.js.map": "/median-react-demo/static/js/main.f8e280a8.js.map"
   },
   "entrypoints": [
-    "static/css/main.834775a1.css",
-    "static/js/main.1f38474b.js"
+    "static/css/main.cbc73d55.css",
+    "static/js/main.f8e280a8.js"
   ]
 }
