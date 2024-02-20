@@ -1,4 +1,6 @@
 import Button from 'components/Button';
+import Container from 'components/Container';
+import Label from 'components/Label';
 import Median from 'median-js-bridge';
 import React, { useCallback, useEffect, useState } from 'react';
 import styles from './styles.module.scss';
@@ -57,35 +59,47 @@ const Home: React.FC = () => {
   }, [shareToAppListenerId]);
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Median React Demo</h1>
-      <p className={styles.note}>
+    <Container innerClassName={styles.container}>
+      <Label size="xl">Median React Demo</Label>
+
+      <Label size="lg" type="error">
         App Only: To use this demo for testing open the current page within your
         Median.co app.
-      </p>
+      </Label>
 
       <div className={styles.content}>
-        <h2 className={styles.section}>Built-in functions</h2>
-        <Button className={styles.button} onClick={handleDeviceInfoClick}>
-          Check Device Info
-        </Button>
+        <div className={styles.section}>
+          <Label size="md">Built-in functions</Label>
+          <Button onClick={handleDeviceInfoClick}>Check Device Info</Button>
+        </div>
 
-        <h2 className={styles.section}>median_app_resumed</h2>
-        <Button className={styles.button} onClick={handleAppResumedClick}>
-          {appResumedListenerId ? 'Remove Listener' : 'Add Listener'}
-        </Button>
+        <div className={styles.section}>
+          <Label size="md">median_app_resumed</Label>
+          <Button onClick={handleAppResumedClick}>
+            {appResumedListenerId ? 'Remove Listener' : 'Add Listener'}
+          </Button>
+        </div>
 
-        <h2 className={styles.section}>median_device_shake (Haptics Plugin)</h2>
-        <Button className={styles.button} onClick={handleDeviceShakeClick}>
-          {deviceShakeListenerId ? 'Remove Listener' : 'Add Listener'}
-        </Button>
+        <div className={styles.section}>
+          <Label size="md">median_device_shake (Haptics Plugin)</Label>
+          <Button onClick={handleDeviceShakeClick}>
+            {deviceShakeListenerId ? 'Remove Listener' : 'Add Listener'}
+          </Button>
+        </div>
 
-        <h2 className={styles.section}>median_share_to_app (Share Plugin)</h2>
-        <Button className={styles.button} onClick={handleShareToAppClick}>
-          {shareToAppListenerId ? 'Remove Listener' : 'Add Listener'}
-        </Button>
+        <div className={styles.section}>
+          <Label size="md">median_share_to_app (Share Plugin)</Label>
+          <Button onClick={handleShareToAppClick}>
+            {shareToAppListenerId ? 'Remove Listener' : 'Add Listener'}
+          </Button>
+        </div>
+
+        <div className={styles.section}>
+          <Label size="lg">Plugins</Label>
+          <Button to="/background-location">Background Location Plugin</Button>
+        </div>
       </div>
-    </div>
+    </Container>
   );
 };
 

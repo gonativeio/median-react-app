@@ -7,7 +7,8 @@
   font-size: 15px;
   font-weight: 550;
   padding: 15px 20px;
-  width: 100%;
+  text-decoration: none;
+  text-align: center;
 
   &:hover {
     cursor: pointer;
@@ -16,8 +17,4 @@
   &:disabled {
     cursor: not-allowed;
   }
-}
-
-.container {
-  width: 100%;
 }

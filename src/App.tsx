@@ -1,14 +1,21 @@
+import BackgroundLocation from 'containers/BackgroundLocation';
 import Home from 'containers/Home';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { useMemo } from 'react';
+import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
+  const Router = useMemo(
+    () => (process.env.REACT_APP_DEVELOPMENT ? BrowserRouter : HashRouter),
+    [],
+  );
+
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route path="/median-react-demo" element={<Home />} />
-        <Route path="*" element={<Navigate to="/median-react-demo" />} />
+        <Route path="/background-location" element={<BackgroundLocation />} />
+        <Route path="*" element={<Home />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 

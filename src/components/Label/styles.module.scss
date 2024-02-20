@@ -1,0 +1,41 @@
+.container {
+  line-height: 1.2;
+  padding-bottom: 5px;
+  text-align: left;
+}
+
+.default {
+  color: black;
+}
+
+.error {
+  color: rgb(197, 27, 27);
+}
+
+.info {
+  color: rgb(24, 24, 199);
+}
+
+.warning {
+  color: rgb(224, 195, 32);
+}
+
+.xl {
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.lg {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.md {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.sm {
+  font-size: 14px;
+  font-weight: 500;
+}
