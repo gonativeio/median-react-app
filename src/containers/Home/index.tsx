@@ -5,7 +5,11 @@ import Median from 'median-js-bridge';
 import React, { useCallback, useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 
-const Home: React.FC = () => {
+interface Props {
+  onChangeSection: (value: string) => void;
+}
+
+const Home: React.FC<Props> = ({ onChangeSection }) => {
   const [appResumedListenerId, setAppResumedListenerId] = useState('');
   const [deviceShakeListenerId, setDeviceShakeListenerId] = useState('');
   const [shareToAppListenerId, setShareToAppListenerId] = useState('');
@@ -105,8 +109,10 @@ const Home: React.FC = () => {
         </div>
 
         <div className={styles.section}>
-          <Label size="lg">Plugins</Label>
-          <Button to="/background-location">Background Location Plugin</Button>
+          <Label size="md">Background Location</Label>
+          <Button onClick={() => onChangeSection('background-location')}>
+            Background Location Demo
+          </Button>
         </div>
       </div>
     </Container>
