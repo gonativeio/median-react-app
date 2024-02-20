@@ -16,10 +16,11 @@ const Home: React.FC = () => {
 
       if (initialized) {
         const params = await Median.branch.getFirstParams();
-        console.log(params)
-      }else {
+        console.log(params);
+      } else {
         const branchId = Median.branchInitialized.addListener(({ data }) => {
-          console.log(data)
+          console.log(branchId);
+          console.log(data);
         });
       }
     });
@@ -66,12 +67,6 @@ const Home: React.FC = () => {
       setShareToAppListenerId(listenerId);
     }
   }, [shareToAppListenerId]);
-
-  // useEffect(() => {
-    
-
-  //   return () => Median.branchInitialized.removeListener(branchId);
-  // }, [])
 
   return (
     <Container innerClassName={styles.container}>
