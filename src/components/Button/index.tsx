@@ -3,6 +3,8 @@ import React, { forwardRef } from 'react';
 import classNames from 'classnames';
 import { Link, LinkProps } from 'react-router-dom';
 import styles from './styles.module.scss';
+import urlJoin from 'url-join';
+import { root } from 'utils/constants';
 
 export type BaseProps = {
   containerClassName?: string;
@@ -32,6 +34,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         <Link
           {...(props as LinkProps)}
           className={classNames(styles.button, className)}
+          to={urlJoin(root, (props as LinkProps).to as string)}
         >
           {children}
         </Link>

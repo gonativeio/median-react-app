@@ -2,6 +2,7 @@ import BackgroundLocation from 'containers/BackgroundLocation';
 import Home from 'containers/Home';
 import { useMemo } from 'react';
 import { BrowserRouter, HashRouter, Route, Routes } from 'react-router-dom';
+import { root } from 'utils/constants';
 
 function App() {
   const Router = useMemo(
@@ -12,7 +13,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/background-location" element={<BackgroundLocation />} />
+        <Route path={`${root}/background-location`} element={<BackgroundLocation />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </Router>
