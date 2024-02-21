@@ -114,6 +114,13 @@ const Home: React.FC<Props> = ({ onChangeSection }) => {
             Background Location Demo
           </Button>
         </div>
+
+        <div className={styles.section}>
+          <Label size="md">One Signal</Label>
+          <Button onClick={() => onChangeSection('onesignal')}>
+            One Signal Push Opened Demo
+          </Button>
+        </div>
       </div>
     </Container>
   );
