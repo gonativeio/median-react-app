@@ -121,6 +121,13 @@ const Home: React.FC<Props> = ({ onChangeSection }) => {
             One Signal Push Opened Demo
           </Button>
         </div>
+
+        <div className={styles.section}>
+          <Label size="md">Sliders</Label>
+          <Button onClick={() => onChangeSection('slider')}>
+            Sliders Demo
+          </Button>
+        </div>
       </div>
     </Container>
   );

@@ -1,6 +1,7 @@
 import BackgroundLocation from 'containers/BackgroundLocation';
 import Home from 'containers/Home';
 import OneSignal from 'containers/OneSignal';
+import Slider from 'containers/Slider';
 import React, { useMemo, useState } from 'react';
 
 const Main: React.FC = () => {
@@ -10,6 +11,7 @@ const Main: React.FC = () => {
     () => ({
       'background-location': <BackgroundLocation />,
       onesignal: <OneSignal />,
+      slider: <Slider />,
     }),
     [],
   );
