@@ -1,14 +1,15 @@
 .button {
-  background-color: black;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: none;
-  color: white;
   font-size: 15px;
   font-weight: 550;
   padding: 15px 20px;
   text-decoration: none;
   text-align: center;
+  transition: 0.1s;
+  user-select: none;
+  width: 100%;
 
   &:hover {
     cursor: pointer;
@@ -17,4 +18,22 @@
   &:disabled {
     cursor: not-allowed;
   }
+}
+
+.primary {
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+}
+
+.secondary {
+  background-color: #f7c406;
+  border: 1px solid #f7c406;
+  color: black;
+}
+
+.tertiary {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
 }
