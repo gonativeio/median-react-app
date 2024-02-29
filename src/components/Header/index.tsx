@@ -4,7 +4,7 @@ import Button from 'components/Button';
 import { useAppNavigate } from 'hooks';
 import React, { useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
-import { CONTENT_MAX_WIDTH, CONTENT_PADDING } from 'utils/constants';
+import { HEADER_MAX_WIDTH, HEADER_PADDING } from 'utils/constants';
 import urls from 'utils/urls';
 import styles from './styles.module.scss';
 
@@ -15,8 +15,8 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({
-  contentMaxWidth = CONTENT_MAX_WIDTH,
-  contentPadding = CONTENT_PADDING,
+  contentMaxWidth = HEADER_MAX_WIDTH,
+  contentPadding = HEADER_PADDING,
   type = 'default',
 }) => {
   const location = useLocation();

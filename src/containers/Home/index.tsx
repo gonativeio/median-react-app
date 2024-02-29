@@ -5,6 +5,7 @@ import Container from 'components/Container';
 import Label from 'components/Label';
 import Section from 'components/Section';
 import React, { useMemo } from 'react';
+import { HEADER_MAX_WIDTH } from 'utils/constants';
 import styles from './styles.module.scss';
 
 const Home: React.FC = () => {
@@ -50,6 +51,7 @@ const Home: React.FC = () => {
 
   return (
     <Container
+      contentMaxWidth={HEADER_MAX_WIDTH}
       innerClassName={styles.container}
       footerType="default"
       headerType="default"

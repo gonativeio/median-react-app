@@ -5,7 +5,7 @@ import Label from 'components/Label';
 import { useClickOutside } from 'hooks';
 import React, { useCallback, useRef, useState } from 'react';
 import { BaseProps, InputChangeEvent } from '../constants';
-import styles from './styles.module.scss';
+import styles from '../styles.module.scss';
 
 interface Option {
   label: string;

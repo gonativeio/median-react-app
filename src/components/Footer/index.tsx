@@ -1,6 +1,6 @@
 import Label from 'components/Label';
 import React from 'react';
-import { CONTENT_MAX_WIDTH, CONTENT_PADDING } from 'utils/constants';
+import { HEADER_MAX_WIDTH, HEADER_PADDING } from 'utils/constants';
 import styles from './styles.module.scss';
 
 interface Props {
@@ -10,8 +10,8 @@ interface Props {
 }
 
 const Footer: React.FC<Props> = ({
-  contentMaxWidth = CONTENT_MAX_WIDTH,
-  contentPadding = CONTENT_PADDING,
+  contentMaxWidth = HEADER_MAX_WIDTH,
+  contentPadding = HEADER_PADDING,
   type = 'default',
 }) => {
   if (type === 'none') {

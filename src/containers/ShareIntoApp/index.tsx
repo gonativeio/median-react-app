@@ -5,12 +5,11 @@ import Median from 'median-js-bridge';
 import React, { useCallback, useState } from 'react';
 import styles from './styles.module.scss';
 
-const OneSignal: React.FC = () => {
+const ShareIntoApp: React.FC = () => {
   const [listenerId, setListenerId] = useState('');
   const [value, setValue] = useState('');
 
   const handleClick = useCallback(() => {
-    // TODO: Use onesignal push opened once the latest version is deployed
     if (listenerId) {
       Median.shareToApp.removeListener(listenerId);
       setListenerId('');
@@ -27,13 +26,10 @@ const OneSignal: React.FC = () => {
       footerType="none"
       headerType="back"
       innerClassName={styles.container}
-      title="OneSignal Plugin"
+      title="Share into App"
     >
-      <Input
-        label="median_onesignal_push_opened"
-        type="textarea"
-        value={value}
-      />
+      <Input label="median_share_to_app" type="textarea" value={value} />
+
       <Button onClick={handleClick} type="secondary">
         {listenerId ? 'Remove Listener' : 'Add Listener'}
       </Button>
@@ -41,4 +37,4 @@ const OneSignal: React.FC = () => {
   );
 };
 
-export default OneSignal;
+export default ShareIntoApp;

@@ -1,18 +1,20 @@
 import React, { ForwardedRef, forwardRef } from 'react';
 
-import { InputChangeEvent } from './constants';
+import { BaseProps, InputChangeEvent } from './constants';
 import RadioInput, { RadioInputProps } from './inputs/RadioInput';
 import SelectInput, { SelectInputProps } from './inputs/SelectInput';
 import TextAreaInput, { TextAreaInputProps } from './inputs/TextAreaInput';
 import TextInput, { TextInputProps } from './inputs/TextInput';
 import ToggleInput, { ToggleInputProps } from './inputs/ToggleInput';
 
-export type InputProps =
-  | RadioInputProps
-  | SelectInputProps
-  | TextAreaInputProps
-  | TextInputProps
-  | ToggleInputProps;
+export type InputProps = BaseProps &
+  (
+    | RadioInputProps
+    | SelectInputProps
+    | TextAreaInputProps
+    | TextInputProps
+    | ToggleInputProps
+  );
 
 const Input: React.FC<InputProps> = forwardRef((props, ref) => {
   if (

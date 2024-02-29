@@ -72,6 +72,7 @@ const TextAreaInput = forwardRef<HTMLTextAreaElement, Props>(
             placeholder={placeholder}
             ref={ref}
             rows={rows}
+            spellCheck={false}
             value={value}
           />
         </div>
