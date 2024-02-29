@@ -1,0 +1,19 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.container {
+  align-items: center;
+  background-color: $clr-background-500;
+  display: flex;
+  justify-content: center;
+  padding: 12px 30px;
+  width: 100%;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}

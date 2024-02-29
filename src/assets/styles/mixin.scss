@@ -1,0 +1,26 @@
+@use 'sass:math';
+@import 'assets/styles/variables';
+
+@mixin tablet {
+  @media (max-width: $gl-breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $gl-breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: $gl-breakpoint-phone) {
+    @content;
+  }
+}
+
+@mixin single-line() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

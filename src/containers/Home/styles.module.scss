@@ -1,21 +1,43 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
 .container {
+  display: flex;
+  flex-direction: column;
+  gap: $gl-section-spacing;
+}
+
+.supportContainer {
   align-items: center;
-  justify-content: center;
+  background-color: $clr-background-500;
+  border-radius: $gl-border-radius-lg;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 100px;
+  padding: 60px 30px;
   text-align: center;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 400px;
-  padding: 30px 0;
   width: 100%;
-}
 
-.section {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  width: 100%;
+  .buttonItem {
+    @include phone {
+      justify-content: space-between;
+    }
+  }
+
+  .buttonsContainer {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+
+    @include phone {
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+  }
+
+  .description {
+    max-width: 612px;
+  }
 }

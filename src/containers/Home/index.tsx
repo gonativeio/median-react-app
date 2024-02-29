@@ -1,124 +1,90 @@
+import IconArrow from 'assets/icons/IconArrow';
+import IconNewWindow from 'assets/icons/IconNewWindow';
 import Button from 'components/Button';
 import Container from 'components/Container';
 import Label from 'components/Label';
-import Median from 'median-js-bridge';
-import React, { useCallback, useEffect, useState } from 'react';
+import Section from 'components/Section';
+import React, { useMemo } from 'react';
 import styles from './styles.module.scss';
 
-interface Props {
-  onChangeSection: (value: string) => void;
-}
+const Home: React.FC = () => {
+  const general = useMemo(
+    () => [
+      {
+        docs: 'https://median.co/docs/npm-package#javascript-bridge-methods-specific-to-npm-package',
+        label: 'NPM Specific Functions',
+        url: 'npm-specific-functions',
+      },
+      {
+        docs: 'https://median.co/docs/npm-package#app-resumed-event',
+        label: 'App Resumed Event',
+        url: 'app-resumed-event',
+      },
+    ],
+    [],
+  );
 
-const Home: React.FC<Props> = ({ onChangeSection }) => {
-  const [appResumedListenerId, setAppResumedListenerId] = useState('');
-  const [deviceShakeListenerId, setDeviceShakeListenerId] = useState('');
-  const [shareToAppListenerId, setShareToAppListenerId] = useState('');
-
-  useEffect(() => {
-    Median.onReady(async () => {
-      const { initialized } = await Median.branch.isInitialized()!;
-
-      if (initialized) {
-        const params = await Median.branch.getFirstParams();
-        console.log(params);
-      } else {
-        const branchId = Median.branchInitialized.addListener(({ data }) => {
-          console.log(branchId);
-          console.log(data);
-        });
-      }
-    });
-  }, []);
-
-  const handleDeviceInfoClick = useCallback(async () => {
-    const isNativeApp = Median.isNativeApp();
-    const platform = await Median.getPlatform();
-    window.alert(`isNativeApp: ${isNativeApp}, getPlatform: ${platform}`);
-  }, []);
-
-  const handleAppResumedClick = useCallback(() => {
-    if (appResumedListenerId) {
-      Median.appResumed.removeListener(appResumedListenerId);
-      setAppResumedListenerId('');
-    } else {
-      const listenerId = Median.appResumed.addListener(() => {
-        window.alert('App resumed callback!');
-      });
-      setAppResumedListenerId(listenerId);
-    }
-  }, [appResumedListenerId]);
-
-  const handleDeviceShakeClick = useCallback(() => {
-    if (deviceShakeListenerId) {
-      Median.deviceShake.removeListener(deviceShakeListenerId);
-      setDeviceShakeListenerId('');
-    } else {
-      const listenerId = Median.deviceShake.addListener(() => {
-        window.alert('Device shake callback!');
-      });
-      setDeviceShakeListenerId(listenerId);
-    }
-  }, [deviceShakeListenerId]);
-
-  const handleShareToAppClick = useCallback(() => {
-    if (shareToAppListenerId) {
-      Median.shareToApp.removeListener(shareToAppListenerId);
-      setShareToAppListenerId('');
-    } else {
-      const listenerId = Median.shareToApp.addListener((data) => {
-        window.alert(`${data.url} - ${data.subject}`);
-      });
-      setShareToAppListenerId(listenerId);
-    }
-  }, [shareToAppListenerId]);
+  const plugins = useMemo(
+    () => [
+      {
+        docs: 'https://median.co/docs/npm-package#haptics-plugin',
+        image: 'https://cdn.median.co/images/plugins/plugin_haptics.svg',
+        label: 'Haptics Plugin',
+        url: 'haptics',
+      },
+      {
+        docs: 'https://median.co/docs/onesignal',
+        image: 'https://cdn.median.co/images/plugins/plugin_onesignal.svg',
+        label: 'OneSignal Plugin',
+        url: 'onesignal',
+      },
+      {
+        docs: 'https://median.co/docs/npm-package#share-into-app-plugin',
+        image: 'https://cdn.median.co/images/plugins/plugin_share.svg',
+        label: 'Share into App',
+        url: 'share-into-app',
+      },
+    ],
+    [],
+  );
 
   return (
-    <Container innerClassName={styles.container}>
-      <Label size="xl">Median React Demo</Label>
+    <Container
+      innerClassName={styles.container}
+      footerType="default"
+      headerType="default"
+    >
+      <Section items={general} title="General" />
 
-      <Label size="lg" type="error">
-        App Only: To use this demo for testing open the current page within your
-        Median.co app.
-      </Label>
+      <Section items={plugins} title="Native Plugins" />
 
-      <div className={styles.content}>
-        <div className={styles.section}>
-          <Label size="md">Built-in functions</Label>
-          <Button onClick={handleDeviceInfoClick}>Check Device Info</Button>
-        </div>
+      <div className={styles.supportContainer}>
+        <Label size="h1" type="light">
+          Support at your Service
+        </Label>
 
-        <div className={styles.section}>
-          <Label size="md">median_app_resumed</Label>
-          <Button onClick={handleAppResumedClick}>
-            {appResumedListenerId ? 'Remove Listener' : 'Add Listener'}
+        <Label className={styles.description} size="h4" type="light">
+          Get answers in our public support portal, or add a support plan for
+          one-on-one help from our experienced engineering team.
+        </Label>
+
+        <div className={styles.buttonsContainer}>
+          <Button
+            className={styles.buttonItem}
+            to="https://median.co/discuss"
+            type="primary"
+          >
+            Go to support portal
+            <IconNewWindow />
           </Button>
-        </div>
 
-        <div className={styles.section}>
-          <Label size="md">median_device_shake (Haptics Plugin)</Label>
-          <Button onClick={handleDeviceShakeClick}>
-            {deviceShakeListenerId ? 'Remove Listener' : 'Add Listener'}
-          </Button>
-        </div>
-
-        <div className={styles.section}>
-          <Label size="md">median_share_to_app (Share Plugin)</Label>
-          <Button onClick={handleShareToAppClick}>
-            {shareToAppListenerId ? 'Remove Listener' : 'Add Listener'}
-          </Button>
-        </div>
-
-        <div className={styles.section}>
-          <Label size="md">Background Location</Label>
-          <Button onClick={() => onChangeSection('background-location')}>
-            Background Location Demo
-          </Button>
-        </div>
-
-        <div className={styles.section}>
-          <Label size="md">One Signal</Label>
-          <Button onClick={() => onChangeSection('onesignal')}>
-            One Signal Push Opened Demo
+          <Button
+            className={styles.buttonItem}
+            to="https://median.co/contact"
+            type="primary"
+          >
+            Contact Engineering
+            <IconArrow direction="right" type="arrow" />
           </Button>
         </div>
       </div>

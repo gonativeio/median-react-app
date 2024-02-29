@@ -1,0 +1,102 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+body {
+  font-family: $gl-font-family-100;
+  background-color: $clr-white;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+html,
+body,
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+html {
+  font-size: 100%;
+}
+
+button,
+div,
+form,
+input,
+span,
+textarea {
+  box-sizing: border-box;
+  font-family: inherit;
+  outline: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin-block: 0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border: 0 solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 9999px;
+    background-color: #cccccc;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 15vw;
+}
+
+h2 {
+  font-size: 12vw;
+}
+
+h3 {
+  font-size: 10vw;
+}
+
+h4 {
+  font-size: 9vw;
+}
+
+h5 {
+  font-size: 8vw;
+}
+
+.no-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.desktop-only {
+  @media (max-width: $gl-breakpoint-mobile) {
+    display: none !important;
+  }
+}
+
+.mobile-only {
+  @media (min-width: ($gl-breakpoint-mobile + 1)) {
+    display: none !important;
+  }
+}

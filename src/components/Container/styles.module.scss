@@ -1,14 +1,48 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  position: relative;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.hero {
+  align-items: center;
+  background-position: center;
+  background-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  padding: 80px 30px;
+  text-align: center;
+  width: 100%;
+
+  .description {
+    max-width: 720px;
+  }
+}
+
 .innerContainer {
   align-items: flex-start;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  flex: 1;
+  margin: auto;
+  padding: $gl-section-spacing 0;
   width: 100%;
 }
 
 .outerContainer {
-  align-items: center;
   display: flex;
-  justify-content: center;
-  padding: 50px 20px;
+  flex: 1;
+  flex-direction: column;
+  min-width: $gl-content-min-width;
+  position: relative;
+  width: 100%;
 }

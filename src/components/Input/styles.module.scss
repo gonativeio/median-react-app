@@ -1,0 +1,157 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+
+  &.fit {
+    width: fit-content;
+  }
+
+  &.horizontal {
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: flex-start;
+  }
+}
+
+.inputContainer {
+  align-items: center;
+  background-color: $clr-background-1;
+  border: 1px solid $clr-border-1;
+  border-radius: 5px;
+  color: $clr-text-1;
+  display: flex;
+  overflow: hidden;
+
+  .input {
+    @include font-size($gl-font-size-xs);
+    background-color: $clr-background-1;
+    border: none;
+    color: inherit;
+    font-weight: $gl-font-weight-medium;
+    outline: none;
+    padding: 10px 12px;
+
+    &::placeholder {
+      color: darken($clr-border-1, 20%);
+    }
+  }
+
+  .inputIcon {
+    height: 22px;
+    padding-left: 12px;
+    width: 22px;
+  }
+}
+
+.radioInput {
+  display: flex;
+  flex-direction: column;
+
+  .radioItem {
+    @include font-size($gl-font-size-xs);
+    gap: 12px;
+    padding: 2px 8px 2px 0;
+    width: fit-content;
+  }
+
+  .radioItemBox {
+    display: flex;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    height: 20px;
+    margin-bottom: 2px;
+    width: 20px;
+
+    &.selected {
+      background-color: $clr-text-1;
+      border: none;
+    }
+  }
+
+  .radioItemIcon {
+    color: $clr-white;
+    height: 12px;
+    margin: auto;
+    width: 12px;
+  }
+
+  .radioItemValue {
+    color: $clr-text-1;
+    text-transform: capitalize;
+  }
+}
+
+.selectInput {
+  position: relative;
+
+  .optionsContainer {
+    background-color: $clr-background-1;
+    border: 1px solid $clr-border-1;
+    border-radius: $gl-border-radius-m;
+    box-shadow: $gl-box-shadow;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    position: absolute;
+    right: 0;
+    width: max-content;
+    z-index: $gl-z-index-select;
+  }
+
+  .optionsItem {
+    @include font-size($gl-font-size-xs);
+    @include text-ellipsis();
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 15px;
+    width: 100%;
+
+    &:hover {
+      background-color: $clr-background-2;
+    }
+  }
+}
+
+.textInput {
+  width: 100%;
+}
+
+.textAreaInput {
+  max-height: 300px;
+  min-height: 150px;
+}
+
+.toggleInput {
+  background-color: $clr-gray;
+  border-radius: 20px;
+  display: flex;
+  height: 16px;
+  overflow: visible;
+  transition: 0.2s;
+  width: 36px;
+
+  &.active {
+    background-color: $clr-black;
+  }
+
+  .toggle {
+    aspect-ratio: 1;
+    background-color: $clr-white;
+    border: 2px solid darken($clr-gray, 5%);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    transition: 0.2s;
+    width: 22px;
+
+    &.active {
+      border: 2px solid $clr-black;
+      transform: translateX(50%);
+    }
+  }
+}

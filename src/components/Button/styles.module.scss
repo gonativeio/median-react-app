@@ -1,39 +1,88 @@
-.button {
-  border: none;
-  border-radius: 8px;
-  box-shadow: none;
-  font-size: 15px;
-  font-weight: 550;
-  padding: 15px 20px;
-  text-decoration: none;
-  text-align: center;
-  transition: 0.1s;
-  user-select: none;
-  width: 100%;
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
 
+.button {
+  align-items: center;
+  background: none;
+  border: none;
+  box-shadow: none;
+  color: $clr-text-100;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 8px;
+  justify-content: center;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  transition: 0.2s;
+  text-decoration: none;
+  text-shadow: none;
+  user-select: none;
+
+  &:focus,
   &:hover {
-    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
   }
 
+  &.disabled,
   &:disabled {
     cursor: not-allowed;
   }
 }
 
+.link {
+  text-decoration: underline !important;
+
+  &:hover {
+    color: $clr-primary-100;
+    text-decoration: none !important;
+  }
+}
+
+.loader {
+  align-items: center;
+  display: flex;
+  height: 10px;
+  justify-content: center;
+}
+
 .primary {
-  background-color: black;
-  border: 1px solid black;
-  color: white;
+  background-color: $clr-primary-100;
+  border-radius: $gl-border-radius-md;
+  color: $clr-text-200 !important;
+  font-size: 16px;
+  font-weight: $gl-font-weight-bold;
+  letter-spacing: 0.03em;
+  height: 48px;
+  padding: 0 24px;
+
+  &:hover {
+    background-color: $clr-primary-200;
+  }
 }
 
 .secondary {
-  background-color: #f7c406;
-  border: 1px solid #f7c406;
-  color: black;
+  background-color: $clr-secondary-100;
+  border-radius: $gl-border-radius-md;
+  color: $clr-white !important;
+  font-size: 16px;
+  font-weight: $gl-font-weight-medium;
+  height: 48px;
+  min-width: 300px;
+  padding: 12px 16px;
+
+  &:hover {
+    background-color: lighten($clr-secondary-100, 5%);
+  }
 }
 
-.tertiary {
-  background-color: white;
-  border: 1px solid black;
-  color: black;
+.text {
+  color: $clr-text-100;
+  font-size: 16px;
+
+  &:hover {
+    color: $clr-primary-100;
+  }
 }

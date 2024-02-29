@@ -1,0 +1,21 @@
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  height: fit-content;
+
+  &.lg {
+    width: 60px;
+  }
+
+  &.md {
+    width: 40px;
+  }
+
+  &.sm {
+    width: 25px;
+  }
+}

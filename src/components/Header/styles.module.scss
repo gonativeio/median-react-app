@@ -1,0 +1,28 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.container {
+  align-items: center;
+  background-color: $clr-background-100;
+  box-shadow: $gl-box-shadow;
+  display: flex;
+  justify-content: center;
+  min-width: $gl-content-min-width;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: $gl-z-index-header;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  width: 100%;
+}
+
+.rightContent {
+  display: flex;
+}

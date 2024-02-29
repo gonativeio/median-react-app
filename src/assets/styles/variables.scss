@@ -1,0 +1,67 @@
+$clr-black: #000000;
+$clr-black-lt: #1a100b;
+$clr-blue: #2c52d2;
+$clr-gray: #7d7a77;
+$clr-gray-dk: #b5b3b1;
+$clr-gray-lt: #e2dfdd;
+$clr-green: #16ae55;
+$clr-red: #d20000;
+$clr-white: #ffffff;
+$clr-white-dk: #f2f0ee;
+$clr-yellow: #f7c406;
+$clr-yellow-dk: #efac00;
+
+$clr-primary-100: $clr-yellow;
+$clr-primary-200: $clr-yellow-dk;
+
+$clr-secondary-100: $clr-black;
+
+$clr-error-100: $clr-red;
+
+$clr-info-100: $clr-blue;
+
+$clr-warning-100: $clr-yellow;
+
+$clr-success-100: $clr-green;
+
+$clr-background-100: $clr-white;
+$clr-background-200: $clr-white-dk;
+$clr-background-300: $clr-gray-lt;
+$clr-background-400: $clr-gray-dk;
+$clr-background-500: $clr-black;
+
+$clr-text-100: $clr-black;
+$clr-text-200: $clr-black-lt;
+$clr-text-300: $clr-gray;
+$clr-text-400: $clr-white;
+
+$clr-border-100: $clr-gray-lt;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Questrial&display=swap');
+$gl-font-family-100: 'Questrial', sans-serif;
+$gl-font-family-200: 'DM Sans', sans-serif;
+
+$gl-font-weight-regular: 400;
+$gl-font-weight-medium: 500;
+$gl-font-weight-semibold: 600;
+$gl-font-weight-bold: 700;
+
+$gl-z-index-header: 100;
+$gl-z-index-overlay: 1000;
+$gl-z-index-modal: 10000;
+$gl-z-index-popup: 100000;
+$gl-z-index-select: 1000000;
+$gl-z-index-toast: 10000000;
+
+$gl-border-radius-lg: 16px;
+$gl-border-radius-md: 12px;
+$gl-border-radius-sm: 10px;
+
+$gl-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+$gl-breakpoint-mobile: 900px;
+$gl-breakpoint-phone: 650px;
+$gl-breakpoint-tablet: 1280px;
+
+$gl-section-spacing: 104px;
+$gl-content-min-width: 400px;

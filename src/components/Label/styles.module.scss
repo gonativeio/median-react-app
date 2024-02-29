@@ -1,41 +1,57 @@
-.container {
-  line-height: 1.2;
-  padding-bottom: 5px;
-  text-align: left;
-}
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+.label {
+  color: inherit;
 
-.default {
-  color: black;
-}
+  // Size
+  &.h1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
 
-.error {
-  color: rgb(197, 27, 27);
-}
+  &.h2 {
+    font-size: 32px;
+    line-height: 2.5rem;
+  }
 
-.info {
-  color: rgb(24, 24, 199);
-}
+  &.h3 {
+    font-family: $gl-font-family-200;
+    font-size: 18px;
+    font-weight: $gl-font-weight-medium;
+    line-height: 24px;
+  }
 
-.warning {
-  color: rgb(224, 195, 32);
-}
+  &.h4 {
+    font-size: 16px;
+    font-weight: $gl-font-weight-bold;
+  }
 
-.xl {
-  font-size: 32px;
-  font-weight: 800;
-}
+  &.h5 {
+    font-size: 14px;
+    font-weight: $gl-font-weight-bold;
+    line-height: 20px;
+  }
 
-.lg {
-  font-size: 16px;
-  font-weight: 600;
-}
+  &.lg {
+    font-size: 12px;
+    font-weight: $gl-font-weight-bold;
+  }
 
-.md {
-  font-size: 15px;
-  font-weight: 500;
-}
+  &.md {
+    font-size: 10px;
+  }
 
-.sm {
-  font-size: 14px;
-  font-weight: 500;
+  &.sm {
+    font-size: 8px;
+    font-weight: $gl-font-weight-medium;
+  }
+
+  // Type
+  &.error {
+    color: $clr-error-100;
+  }
+
+  &.light {
+    color: $clr-text-400;
+  }
 }
