@@ -36,7 +36,7 @@ const TextAreaInput = forwardRef<HTMLTextAreaElement, Props>(
       onChange = () => null,
       onFocus = () => null,
       placeholder,
-      rows = 4,
+      rows = 5,
       value,
     },
     ref,

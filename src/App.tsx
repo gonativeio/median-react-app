@@ -1,4 +1,5 @@
 import AppResumedEvent from 'containers/AppResumedEvent';
+import Clipboard from 'containers/Clipboard';
 import Haptics from 'containers/Haptics';
 import Home from 'containers/Home';
 import NpmSpecificFunctions from 'containers/NpmSpecificFunctions';
@@ -17,6 +18,7 @@ function App() {
           element={<NpmSpecificFunctions />}
         />
         <Route path="app-resumed-event/*" element={<AppResumedEvent />} />
+        <Route path="clipboard/*" element={<Clipboard />} />
 
         <Route path="haptics/*" element={<Haptics />} />
         <Route path="onesignal/*" element={<OneSignal />} />

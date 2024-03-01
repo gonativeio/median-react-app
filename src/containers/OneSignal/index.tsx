@@ -30,7 +30,8 @@ const OneSignal: React.FC = () => {
       title="OneSignal Plugin"
     >
       <Input
-        label="median_onesignal_push_opened"
+        label="median_onesignal_push_opened callback"
+        onChange={(e) => setValue(e.value)}
         type="textarea"
         value={value}
       />

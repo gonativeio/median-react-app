@@ -21,6 +21,11 @@ const Home: React.FC = () => {
         label: 'App Resumed Event',
         url: 'app-resumed-event',
       },
+      {
+        docs: 'https://median.co/docs/clipboard',
+        label: 'Clipboard',
+        url: 'clipboard',
+      },
     ],
     [],
   );

@@ -28,7 +28,12 @@ const ShareIntoApp: React.FC = () => {
       innerClassName={styles.container}
       title="Share into App"
     >
-      <Input label="median_share_to_app" type="textarea" value={value} />
+      <Input
+        label="median_share_to_app callback"
+        onChange={(e) => setValue(e.value)}
+        type="textarea"
+        value={value}
+      />
 
       <Button onClick={handleClick} type="secondary">
         {listenerId ? 'Remove Listener' : 'Add Listener'}
