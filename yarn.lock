@@ -6900,10 +6900,10 @@ media-typer@0.3.0:
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==
 
-median-js-bridge@^1.3.1:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/median-js-bridge/-/median-js-bridge-1.3.2.tgz#f6c08f528cc8c44ce200ca76b3cbda6f1ace8190"
-  integrity sha512-g/WTJ8XT5KksQAeHQDa2yO2qyPfBd1Kz6x/WDYgj/RGf1vg1TWnkSDbfz0fJrSMNMdBauZaOcvWS0OYypMsjOw==
+median-js-bridge@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/median-js-bridge/-/median-js-bridge-2.0.3.tgz#3a70c6736e716c1828905dbf6ae0b3b17a6e3b6c"
+  integrity sha512-O4bf2SrtIkzv0izcGlTj/cOSVRKyTUnKg1aXTSeN9zCH6KzWp0KYjMG1QPgxuGtsvAtQMRkMW6r1qrw5dTB0Dw==
 
 memfs@^3.1.2, memfs@^3.4.3:
   version "3.6.0"
