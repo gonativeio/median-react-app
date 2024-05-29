@@ -23,12 +23,8 @@ This will open http://localhost:3000 in your browser. You can close this browser
 
 ### Physical Devices
 
-To run the app on physical devices you need the IP address of your computer on your local network. 
+To run the app on physical devices you need the IP address of your computer on your local network.
+
 - Replace the `http://localhost:3000` with `http://<your-ip-address>:3000` in appConfig.json.
 - Make sure both your computer and your mobile device are on the same local network i.e. Wi-Fi.
 - Build and run the app using the respective IDE for Android or iOS.
-
-### Successful launch
-The React app will display an alert immediately upon page load when launched within a Median app.
-
-<img src="public/screenshot.png" alt="App Screenshot" width="30%" height="auto">

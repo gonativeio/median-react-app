@@ -1,20 +1,23 @@
-import BackgroundLocation from 'containers/BackgroundLocation';
-import Home from 'containers/Home';
-import OneSignal from 'containers/OneSignal';
-import React, { useMemo, useState } from 'react';
+import Content from 'containers/Content';
+import Header from 'containers/Header';
+import Timestamp from 'containers/Timestamp';
+import React, { useEffect } from 'react';
+import styles from './styles.module.scss';
 
 const Main: React.FC = () => {
-  const [section, setSection] = useState('');
+  useEffect(() => {
+    // Median.jsNavigation.url.addListener((data) => {
+    //   console.log(data);
+    // });
+  }, []);
 
-  const sections: Record<string, React.ReactNode> = useMemo(
-    () => ({
-      'background-location': <BackgroundLocation />,
-      onesignal: <OneSignal />,
-    }),
-    [],
+  return (
+    <div className={styles.container}>
+      <Header />
+      <Content />
+      <Timestamp />
+    </div>
   );
-
-  return <>{sections[section] || <Home onChangeSection={setSection} />}</>;
 };
 
 export default Main;

@@ -6901,9 +6901,9 @@ media-typer@0.3.0:
   integrity sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==
 
 median-js-bridge@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/median-js-bridge/-/median-js-bridge-2.0.3.tgz#3a70c6736e716c1828905dbf6ae0b3b17a6e3b6c"
-  integrity sha512-O4bf2SrtIkzv0izcGlTj/cOSVRKyTUnKg1aXTSeN9zCH6KzWp0KYjMG1QPgxuGtsvAtQMRkMW6r1qrw5dTB0Dw==
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/median-js-bridge/-/median-js-bridge-2.0.5.tgz#6113afcd9beaf827f00dc507091046f32f0e4624"
+  integrity sha512-n3Pl5AhlTycNUBrh7U6MCqJP0DWMLKhCGPOL43qqU3pngYbmuznuv89kFMZvNQsDKJEDclkS4E0MTPwYmHZR2Q==
 
 memfs@^3.1.2, memfs@^3.4.3:
   version "3.6.0"

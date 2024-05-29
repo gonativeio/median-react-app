@@ -2,15 +2,13 @@ import React, { forwardRef } from 'react';
 
 import classNames from 'classnames';
 import { Link, LinkProps } from 'react-router-dom';
-import urlJoin from 'url-join';
-import { root } from 'utils/constants';
 import styles from './styles.module.scss';
 
 export type BaseProps = {
   containerClassName?: string;
   disabled?: boolean;
   isSubmit?: boolean;
-  type?: 'primary' | 'secondary' | 'tertiary';
+  type?: 'link';
 };
 
 export type ButtonProps = BaseProps &
@@ -24,7 +22,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       containerClassName,
       disabled,
       isSubmit,
-      type = 'primary',
+      type = 'link',
       ...props
     },
     ref,
@@ -36,13 +34,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           className={classNames(
             styles.button,
             {
-              [styles.primary]: type === 'primary',
-              [styles.secondary]: type === 'secondary',
-              [styles.tertiary]: type === 'tertiary',
+              [styles.link]: type === 'link',
             },
             className,
           )}
-          to={urlJoin(root, (props as LinkProps).to as string)}
+          to={(props as LinkProps).to as string}
         >
           {children}
         </Link>
@@ -55,9 +51,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         className={classNames(
           styles.button,
           {
-            [styles.primary]: type === 'primary',
-            [styles.secondary]: type === 'secondary',
-            [styles.tertiary]: type === 'tertiary',
+            [styles.link]: type === 'link',
           },
           className,
         )}

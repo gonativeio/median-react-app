@@ -1,13 +1,12 @@
 .button {
   border: none;
-  border-radius: 8px;
   box-shadow: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 550;
   padding: 15px 20px;
   text-decoration: none;
   text-align: center;
-  transition: 0.1s;
+  transition: 0.2s;
   user-select: none;
   width: 100%;
 
@@ -18,22 +17,17 @@
   &:disabled {
     cursor: not-allowed;
   }
+
+  @media (max-width: 650px) {
+    font-size: 14px;
+  }
 }
 
-.primary {
-  background-color: black;
-  border: 1px solid black;
-  color: white;
-}
-
-.secondary {
-  background-color: #f7c406;
-  border: 1px solid #f7c406;
+.link {
+  background-color: transparent;
   color: black;
-}
 
-.tertiary {
-  background-color: white;
-  border: 1px solid black;
-  color: black;
+  &:hover {
+    color: #f7c406;
+  }
 }
